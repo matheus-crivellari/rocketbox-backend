@@ -4,6 +4,9 @@ const Box = require('../model/Box');
 class BoxController{
 	async store(req, res){
 		const box = await Box.create({ title : 'Rocketseat'});
-		return res.send('Resource created.');
+		return res.json(box);
 	}
 }
+
+// Exports an instance of BoxController
+module.exports = new BoxController();
