@@ -10,7 +10,7 @@ const File = new mongoose.Schema({
 		required : true,
 	},
 },{
-	timestamps : true // Adds createdat and updatedat to schema
+	timestamps : true // Adds createdAt and updatedAt to schema
 });
 
 // Exports model as a module for later use in express

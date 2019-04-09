@@ -8,7 +8,7 @@ const Box = new mongoose.Schema({
 
 	files : [{ type : mongoose.Schema.Types.ObjectId, ref: 'File' }],
 },{
-	timestamps : true // Adds createdat and updatedat to schema
+	timestamps : true // Adds createdAt and updatedAt to schema
 });
 
 // Exports model as a module for later use in express
