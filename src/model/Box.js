@@ -3,10 +3,10 @@ const mongoose = require('mongoose');
 const Box = new mongoose.Schema({
 	title : {
 		type : String,
-		required : true,		
+		required : true,
 	},
 
-	files : [],
+	files : [{ type : mongoose.Schema.Types.ObjectId, ref: 'File' }],
 },{
 	timestamps : true // Adds createdat and updatedat to schema
 });
