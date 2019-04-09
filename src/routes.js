@@ -4,7 +4,7 @@ const routes = express.Router();
 
 // Testing route
 routes.get('/teste', (req, res) => {
-	return res.send('Hello world!');
+	return res.send('Hello teco!');
 });
 
 // Exports routes to be used as a module for express
