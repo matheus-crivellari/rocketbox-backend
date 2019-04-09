@@ -1,11 +1,10 @@
 const express = require('express');
 
-const routes = express.Router();
+const routes = express.Router(),
+	  BoxController = require('./controllers/BoxController');
 
-// Testing route
-routes.get('/teste', (req, res) => {
-	return res.send('Hello teco!');
-});
+// Assigns BoxController's method store to route /boxes
+routes.post('/boxes', BoxController.store);
 
 // Exports routes to be used as a module for express
 module.exports = routes;
