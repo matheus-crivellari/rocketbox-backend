@@ -1,7 +1,13 @@
 const express = require('express');
+const mongoose = require('mongoose');
 
 const PORT = 3333,
- 	  app = express();
+	   app = express();
+	   
+// Connect to database
+mongoose.connect('mongodb+srv://omnistack:omnistack@cluster0-fqd3x.mongodb.net/omnistack?retryWrites=true', {
+	useNewUrlParser : true
+});
 
 // Useful for REST API
 app.use(express.json());
