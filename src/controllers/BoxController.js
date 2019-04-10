@@ -11,7 +11,11 @@ class BoxController{
 	}
 
 	async show(req, res){
-		const box = await Box.findById(req.params.id);
+		// Displays only ids of relationship
+		// const box = await Box.findById(req.params.id);
+
+		// Displays all data from relationship
+		const box = await Box.findById(req.params.id).populate('files');
 
 		return res.json(box);
 	}
