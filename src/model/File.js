@@ -17,8 +17,8 @@ const File = new mongoose.Schema({
 
 // Here it can't be an arrow function!!
 File.virtual('url').get(function(){
-	console.log('teco', this.path);
-	return `http://localhost:3333/files/${encodeURIComponent(this.path)}`;
+	const url = process.env.URL || 'http://localhost:3333';
+	return `${url}/files/${encodeURIComponent(this.path)}`;
 });
 
 // Exports model as a module for later use in express
