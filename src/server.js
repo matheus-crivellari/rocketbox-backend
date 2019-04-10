@@ -1,10 +1,10 @@
 const express   = require('express'),
-	  path  	= require('path'),
-	  cors 		= require('cors'),
- 	  mongoose  = require('mongoose');
+      path  	= require('path'),
+      cors 		= require('cors'),
+       mongoose  = require('mongoose');
 
 const PORT = 3333,
-	   app = express();
+       app = express();
 
 // Bind express app to http server
 const server = require('http').Server(app);
@@ -14,16 +14,16 @@ const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
 io.on('connect', socket => {
-	socket.on('connectRoom', box => {
-		// when user connects, join box room
-		socket.join(box);
-	});
+    socket.on('connectRoom', box => {
+        // when user connects, join box room
+        socket.join(box);
+    });
 });
 
 // Connect to database
 mongoose.connect('mongodb+srv://omnistack:omnistack@cluster0-fqd3x.mongodb.net/omnistack?retryWrites=true',
 {
-	useNewUrlParser : true
+    useNewUrlParser : true
 });
 
 // Global middleware for allowring connection from everywhere
@@ -31,8 +31,8 @@ app.use(cors());
 
 // Global middleware for injecting io reference in every request
 app.use((req, res, next) => {
-	req.io = io;
-	return next();
+    req.io = io;
+    return next();
 });
 
 // Useful for REST API
