@@ -16,7 +16,7 @@ module.exports = {
         filename : (req, file, cbck) => {
             // Generate 18n bytes of random characters
             crypto.randomBytes(16, (error, hash) => {
-                if(err) cbck(err);
+                if(error) cbck(error);
 
                 // Generate new filename for avoiding overriding files
                 file.key = `${hash.toString('hex')}-${file.originalname}`;
