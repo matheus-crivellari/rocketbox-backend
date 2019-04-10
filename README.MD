@@ -16,6 +16,9 @@ Rocket Box is a simple cloud storage web application like Dropbox or Google Driv
   - Heroku;
   - MongoDB Atlas.
 
+## Live demo
+
+For a live demo this project uses Heroku. [Click here to test it live](http://omnistack-teco.herokuapp.com/).
 
 --- 
 
