@@ -1,11 +1,26 @@
-const File = require('../model/File');
+const File = require('../model/File'),
+      Box = require('../model/Box');
 
 // Class which will control the File model
 class FileController{
 	async store(req, res){
-        console.log(req.file);
+        // Gets box by its id provided in url
+        const box = await Box.findById(req.params.id);
 
-        return res.send('Ok');
+        // Creates a new file entry to be stored
+        const file = await File.create({
+            title : req.file.originalname,
+            path : req.file.key,
+        });
+
+        // Pushes the newly file created to boxe's files (relationship)
+        box.files.push(file);
+
+        // Saves new entry to boxes
+        await box.save();
+
+        // Respond to client
+        return res.json(file);
 	}
 }
 
