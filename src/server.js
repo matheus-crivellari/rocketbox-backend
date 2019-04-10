@@ -1,5 +1,6 @@
 const express   = require('express'),
 	  path  	= require('path'),
+	  cors 		= require('cors'),
  	  mongoose  = require('mongoose');
 
 const PORT = 3333,
@@ -25,7 +26,10 @@ mongoose.connect('mongodb+srv://omnistack:omnistack@cluster0-fqd3x.mongodb.net/o
 	useNewUrlParser : true
 });
 
-// Global diddleware for injecting io reference in every request
+// Global middleware for allowring connection from everywhere
+app.use(cors());
+
+// Global middleware for injecting io reference in every request
 app.use((req, res, next) => {
 	req.io = io;
 	return next();
