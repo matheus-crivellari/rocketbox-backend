@@ -18,7 +18,9 @@ module.exports = {
             crypto.randomBytes(16, (error, hash) => {
                 if(error) cbck(error);
 
-                // Generate new filename for avoiding overriding files
+                // Injects a property in file object containing
+                // generated new filename for avoiding overriding
+                // files with same name on server
                 file.key = `${hash.toString('hex')}-${file.originalname}`;
                 cbck(null, file.key);
             });
