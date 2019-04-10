@@ -6,7 +6,7 @@ const PORT = 3333,
 	   app = express();
 
 // Bind express app to http server
-const server = rquire('http').Server(app);
+const server = require('http').Server(app);
 
 // Binds socketio to http server so
 // both express and socketio can use the same server
