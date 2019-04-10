@@ -3,7 +3,7 @@ const express   = require('express'),
       cors 		= require('cors'),
        mongoose  = require('mongoose');
 
-const PORT = 3333,
+const PORT = process.env.PORT || 3333,
        app = express();
 
 // Bind express app to http server
