@@ -47,6 +47,9 @@ app.use('/files', express.static(path.resolve(__dirname, '..', 'tmp')));
 // Use our routing filfe (./ relative to current file)
 app.use(require('./routes'));
 
+// Temporary root route hello world
+app.use('/', (req, res) => res.send('Hello world!'));
+
 
 // Listen to port 3333
 // app.listen(PORT);
