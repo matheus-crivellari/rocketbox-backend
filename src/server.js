@@ -25,7 +25,7 @@ mongoose.connect('mongodb+srv://omnistack:omnistack@cluster0-fqd3x.mongodb.net/o
 	useNewUrlParser : true
 });
 
-// Middleware for injecting io reference in every request
+// Global diddleware for injecting io reference in every request
 app.use((req, res, next) => {
 	req.io = io;
 	return next();
