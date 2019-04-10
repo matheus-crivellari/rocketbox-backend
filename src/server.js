@@ -5,6 +5,13 @@ const express   = require('express'),
 const PORT = 3333,
 	   app = express();
 
+// Bind express app to http server
+const server = rquire('http').Server(app);
+
+// Binds socketio to http server so
+// both express and socketio can use the same server
+const io = require('socket.io')(server);
+
 // Connect to database
 mongoose.connect('mongodb+srv://omnistack:omnistack@cluster0-fqd3x.mongodb.net/omnistack?retryWrites=true',
 {
@@ -25,4 +32,5 @@ app.use(require('./routes'));
 
 
 // Listen to port 3333
-app.listen(PORT);
+// app.listen(PORT);
+server.listen(PORT); // Uses server instead of express app
