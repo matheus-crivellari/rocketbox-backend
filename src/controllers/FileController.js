@@ -19,6 +19,9 @@ class FileController{
         // Saves new entry to boxes
         await box.save();
 
+        // Emits an event 'file' for every user in room box id
+        req.io.sockets.in('box._id').emit('file', file);
+
         // Respond to client
         return res.json(file);
 	}
