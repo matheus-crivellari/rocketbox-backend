@@ -1,10 +1,11 @@
-# RocketBox
+# RocketBox Backend
 
 ## About
 
 Rocket Box is a simple cloud storage web application like Dropbox or Google Drive for study purposes. This project follows all concepts presented in [Rocketseat](https://rocketseat.com.br/)'s Omnistack intensive training week. The Omnistack is an online educational event where knowledge about the most recent web technologies are shared through instrutional videos.
 
-## Which techs this project does cover
+## What this project does cover
+This project covers all of the backend of this application using the following technologies:
 
 - Development:
   - NodeJS;
@@ -20,7 +21,7 @@ Rocket Box is a simple cloud storage web application like Dropbox or Google Driv
 
 For a live demo this project uses Heroku. [Click here to test it live](http://omnistack-teco.herokuapp.com/).
 
---- 
+---
 
 ## License
 Copyright 2019 Matheus Crivellari
