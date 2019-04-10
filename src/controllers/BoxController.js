@@ -15,7 +15,12 @@ class BoxController{
 		// const box = await Box.findById(req.params.id);
 
 		// Displays all data from relationship
-		const box = await Box.findById(req.params.id).populate('files');
+		const box = await Box.findById(req.params.id).populate({
+			path: 'files',
+			options : {
+				sort: { createdAt : -1 }
+			}
+		});
 
 		return res.json(box);
 	}
