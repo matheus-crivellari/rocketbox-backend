@@ -4,6 +4,9 @@ const express   = require('express'),
       mongoose  = require('mongoose');
 
 const PORT = process.env.PORT || 3333,
+      DBUSER = process.env.DBUSER || 'omnistack',
+      DBPASS = process.env.DBPASS || 'omnistack',
+      DBNAME = process.env.DBNAME || 'omnistack',
        app = express();
 
 // Bind express app to http server
@@ -21,9 +24,9 @@ io.on('connect', socket => {
 });
 
 // Connect to database
-mongoose.connect('mongodb+srv://omnistack:omnistack@cluster0-fqd3x.mongodb.net/omnistack?retryWrites=true',
+mongoose.connect(`mongodb+srv://${DBUSER}:${DBPASS}@cluster0-fqd3x.mongodb.net/${DBNAME}?retryWrites=true`,
 {
-    useNewUrlParser : true
+    useNewUrlParser : true,
 });
 
 // Global middleware for allowring connection from everywhere
